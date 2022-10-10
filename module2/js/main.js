@@ -180,4 +180,4 @@ selectedCurrency.addEventListener("change", async () => {
         professionalCard.innerText = `$ ${valueCurrency[1]}`;
         premiumCard.innerText = `$ ${valueCurrency[2]}`;
     }
-});
+})
