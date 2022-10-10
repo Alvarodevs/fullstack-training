@@ -1,5 +1,6 @@
 import { REGEX, URL_POST_FORM, URL_GET_CURRENCIES } from "../utils/constants.js";
 import { postForm, getCurrencies } from "../services/api_calls.js";
+import Slider from './slider.js';
 
 //Toggle menu de header
 document.querySelector(".burger_btn").addEventListener("click", (e) => {
@@ -181,3 +182,14 @@ selectedCurrency.addEventListener("change", async () => {
         premiumCard.innerText = `$ ${valueCurrency[2]}`;
     }
 });
+
+//Slider
+const next = document.querySelector('chevron_right');
+const prev = document.querySelector('chevron_left');
+
+const onLoad = () => {
+    console.log('loaded')
+    const newSlider = new Slider('slider');
+
+}
+window.addEventListener('load', onLoad)
