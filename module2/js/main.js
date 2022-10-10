@@ -184,12 +184,7 @@ selectedCurrency.addEventListener("change", async () => {
 });
 
 //Slider
-const next = document.querySelector('chevron_right');
-const prev = document.querySelector('chevron_left');
-
 const onLoad = () => {
-    console.log('loaded')
-    const newSlider = new Slider('slider');
-
+    new Slider('slider');
 }
-window.addEventListener('load', onLoad)
+window.addEventListener('load', onLoad);
