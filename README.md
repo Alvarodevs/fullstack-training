@@ -2,7 +2,8 @@ Fullstack React training w. Oxygen
 
 1- Module 2: finished.
 
-<div style="padding-left:80px">Follow these steps to review:
+<div style="padding-left:80px">
+Follow these steps to review:
 
 **1st** Clone this <a href="https://github.com/Alvarodevs/fullstack-training/tree/module1-HTML+CSS"> repo. </a>
 
