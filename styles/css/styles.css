@@ -238,14 +238,7 @@ body {
   margin: 30px auto;
   height: fit-content;
 }
-.whyus_container .platform_cards_container .card1 {
-  content: url("../assets/images/Card1.png");
-}
-.whyus_container .platform_cards_container .card2 {
-  content: url("../assets/images/Card2.png");
-}
 .whyus_container .platform_cards_container .card3 {
-  content: url("../assets/images/Card3.png");
   padding-bottom: 3rem;
 }
 
