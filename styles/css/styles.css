@@ -100,18 +100,14 @@ body {
   width: 25px;
   margin-right: 20px;
 }
-.header_container .burger_btn {
-  content: url("../assets/icons/bars-1.svg");
+.header_container .hidden {
+  display: none;
 }
-.header_container .close_btn {
-  content: url("../assets/icons/close_menu.png");
-  width: 18px;
+.header_container .close_btn_header {
+  width: 20px;
 }
 .header_container .nav_links_hidden {
   display: none;
-}
-.header_container .close_btn {
-  content: url("../assets/icons/close_menu.png");
 }
 .header_container .nav_links {
   margin: 20px 20px;
@@ -183,7 +179,6 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  flex-direction: column;
 }
 .whyus_container .header .title {
   font-family: var(--font-title);
@@ -211,6 +206,13 @@ body {
   border: none;
   font-family: var(--font-text);
   color: var(--white);
+}
+.whyus_container .header .header_btn_container .btn_shop:hover {
+  transition: 0.3s;
+  font-weight: 600;
+  background: var(--white);
+  border: 1px solid var(--blue-shadow);
+  color: var(--blue-hover);
 }
 .whyus_container .whyus_img_container {
   overflow: hidden;
@@ -834,7 +836,7 @@ body {
     width: 70%;
   }
 }
-.main_container_modal {
+.main_container_modal, .modal_contact, .newsletter_subscribed {
   position: fixed;
   top: 0;
   left: 0;
@@ -845,7 +847,7 @@ body {
   padding-top: 10%;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.main_container_modal .modal {
+.main_container_modal .modal, .modal_contact .modal, .newsletter_subscribed .modal {
   width: 60%;
   top: 10px;
   left: 20%;
@@ -854,7 +856,7 @@ body {
   text-align: center;
   position: relative;
 }
-.main_container_modal .modal .close_btn_modal {
+.main_container_modal .modal .close_btn_modal, .modal_contact .modal .close_btn_modal, .newsletter_subscribed .modal .close_btn_modal {
   background-color: var(--white);
   border: 1px solid var(--blue);
   border-radius: 5px;
@@ -864,23 +866,23 @@ body {
   top: 20px;
   right: 20px;
 }
-.main_container_modal .modal .close_btn_modal img {
+.main_container_modal .modal .close_btn_modal img, .modal_contact .modal .close_btn_modal img, .newsletter_subscribed .modal .close_btn_modal img {
   padding-top: 2px;
 }
-.main_container_modal .modal .close_btn_modal:hover {
+.main_container_modal .modal .close_btn_modal:hover, .modal_contact .modal .close_btn_modal:hover, .newsletter_subscribed .modal .close_btn_modal:hover {
   box-shadow: 0px 0px 10px var(--blue-shadow);
   cursor: pointer;
 }
-.main_container_modal .modal .form_modal h3 {
+.main_container_modal .modal .form_modal h3, .modal_contact .modal .form_modal h3, .newsletter_subscribed .modal .form_modal h3 {
   font-family: var(--font-title);
   font-size: 30px;
 }
-.main_container_modal .modal .form_modal p {
+.main_container_modal .modal .form_modal p, .modal_contact .modal .form_modal p, .newsletter_subscribed .modal .form_modal p {
   font-family: var(--font-text);
   font-size: 20px;
   margin: 30px;
 }
-.main_container_modal .modal .form_modal .input_newsletter {
+.main_container_modal .modal .form_modal .input_newsletter, .modal_contact .modal .form_modal .input_newsletter, .newsletter_subscribed .modal .form_modal .input_newsletter {
   font-family: var(--font-text);
   width: 50%;
   border: none;
@@ -889,17 +891,17 @@ body {
   height: 30px;
   padding: 5px;
 }
-.main_container_modal .modal .form_modal .input_newsletter:focus-visible {
+.main_container_modal .modal .form_modal .input_newsletter:focus-visible, .modal_contact .modal .form_modal .input_newsletter:focus-visible, .newsletter_subscribed .modal .form_modal .input_newsletter:focus-visible {
   outline: none;
 }
-.main_container_modal .modal .form_modal .error {
+.main_container_modal .modal .form_modal .error, .modal_contact .modal .form_modal .error, .newsletter_subscribed .modal .form_modal .error {
   border: 2px solid red;
   border-radius: 10px;
 }
-.main_container_modal .modal .form_modal .correct {
+.main_container_modal .modal .form_modal .correct, .modal_contact .modal .form_modal .correct, .newsletter_subscribed .modal .form_modal .correct {
   border-bottom: 2px solid var(--green);
 }
-.main_container_modal .modal .form_modal .submit_newsletter {
+.main_container_modal .modal .form_modal .submit_newsletter, .modal_contact .modal .form_modal .submit_newsletter, .newsletter_subscribed .modal .form_modal .submit_newsletter {
   background-color: var(--blue);
   box-shadow: 5px 10px 14px var(--blue-shadow);
   border-radius: 35px;
@@ -911,7 +913,7 @@ body {
   font-size: 15px;
   cursor: pointer;
 }
-.main_container_modal .modal .form_modal .submit_newsletter:hover {
+.main_container_modal .modal .form_modal .submit_newsletter:hover, .modal_contact .modal .form_modal .submit_newsletter:hover, .newsletter_subscribed .modal .form_modal .submit_newsletter:hover {
   background-color: var(--white);
   color: var(--blue);
 }

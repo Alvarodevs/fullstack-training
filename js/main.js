@@ -3,10 +3,18 @@ import { postForm, getCurrencies } from "../services/api_calls.js";
 import Slider from './slider.js';
 
 //Toggle menu de header
-document.querySelector(".burger_btn").addEventListener("click", (e) => {
-    document.querySelector(".nav_links").classList.toggle("nav_links_hidden");
-    e.target.classList.toggle("close_btn")
-});
+const closeButtonHeader = document.querySelector('.close_btn_header');
+const burgerButton = document.querySelector('.burger_btn');
+const iconsHeader = document.querySelectorAll('.header_icon');
+const navLinks = document.querySelector(".nav_links");
+
+iconsHeader.forEach(item => {
+	item.addEventListener("click", (e) => {
+		navLinks.classList.toggle("nav_links_hidden");
+		burgerButton.classList.toggle("hidden");
+		closeButtonHeader.classList.toggle("hidden");
+	})
+})
 
 //Scrollbar horizontal progresivo
 const scrollbar = document.getElementById("scrollbar");
@@ -91,8 +99,9 @@ form.addEventListener("submit", (e) => {
     } else policy_label.classList.add("not_checked");
 })
 
-//Modal 
+//Modal
 const modalContainer = document.querySelector('.main_container_modal')
+
 
 //Active w. scroll
 function modalIsActive(percentage) {
@@ -117,9 +126,15 @@ function modalClosed() {
     }
 }
 
+//Subscribed message modal
+setTimeout(() => {
+
+})
+
 //Submit modal
 const submitModal = document.querySelector(".form_modal")
 const emailModal = document.querySelector(".input_newsletter");
+const subscribedModal = document.querySelector('.newsletter_subscribed');
 
 emailModal.addEventListener("keyup", (e) => {
     console.log(e.target.value)
@@ -135,6 +150,10 @@ emailModal.addEventListener("keyup", (e) => {
 submitModal.addEventListener("submit", (e) => {
     e.preventDefault();
     postForm(URL_POST_FORM, '', emailModal.value);
+	subscribedModal.style.display = 'block'
+	setTimeout(() => {
+		subscribedModal.style.display = 'none'
+	}, 3000)
     modalClosed();
 });
 
@@ -188,3 +207,22 @@ const onLoad = () => {
     new Slider('slider');
 }
 window.addEventListener('load', onLoad);
+
+//Submit contact form
+const contactForm = document.querySelector('.form');
+const modalContact = document.querySelector('.modal_contact');
+const closeModalContact = document.querySelector('.close_btn_modal_contact')
+
+contactForm.addEventListener('submit', (e) => {
+	const nameValue = name.value;
+	const emailValue = email.value;
+	const isChecked = checkbox.checked;
+	e.preventDefault();
+	if (nameValue && emailValue && isChecked){
+		modalContact.style.display = 'block';
+	}
+})
+
+closeModalContact.addEventListener('click', () => {
+	modalContact.style.display = "none";
+})
